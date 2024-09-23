@@ -8,9 +8,11 @@
 #ifndef TomatoApplication_h
 #define TomatoApplication_h
 
+#include "TomatoUtilities.h"
+
 namespace Tmt
 {
-    class TomatoApplication
+    class TOMATO_API TomatoApplication
     {
     public:
         void Run();

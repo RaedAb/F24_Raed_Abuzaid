@@ -6,14 +6,14 @@
 //
 
 //#include "MyGameApplication.hpp"
-#include "include/Tomato.h"
+#include "Tomato.h"
 #include <iostream>
 
 class MyGameApplication : public Tmt::TomatoApplication
 {
     virtual void Initialize() override
     {
-        std::cout << "Starting..." << std::endl;
+        std::cout << "Starting...\a" << std::endl;
     }
     
     virtual void Update() override

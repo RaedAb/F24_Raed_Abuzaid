@@ -13,12 +13,12 @@ class MyGameApplication : public Tmt::TomatoApplication
 {
     virtual void Initialize() override
     {
-        std::cout << "Starting...\a" << std::endl;
+        TOMATO_LOG("Starting...");
     }
     
     virtual void Update() override
     {
-//        std::cout << "Running..." << std::endl;
+        
     }
 };
 

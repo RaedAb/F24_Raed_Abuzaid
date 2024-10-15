@@ -8,7 +8,8 @@
 #ifndef Tomato_h
 #define Tomato_h
 
-#include "../TomatoApplication.h"
 #include "../EntryPoint.h"
+#include "../TomatoApplication.h"
+#include "../TomatoWindow.h"
 
 #endif /* Tomato_h */

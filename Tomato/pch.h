@@ -14,5 +14,6 @@
 #include <chrono>
 #include <functional>
 #include <algorithm>
+#include <memory>
 
 #endif /* pch_h */

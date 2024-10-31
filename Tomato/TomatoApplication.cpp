@@ -8,6 +8,8 @@
 
 #include "TomatoApplication.h"
 #include "TomatoWindow.h"
+#include <glad/glad.h>
+#include <stbi_image.h>
 
 namespace Tmt
 {

@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		346903A92CD4127200CE7DD9 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 34669E522CCAD16C00BDDF03 /* glad.c */; };
-		346903AA2CD4128000CE7DD9 /* glad.h in Headers */ = {isa = PBXBuildFile; fileRef = 34669E4D2CCAD15F00BDDF03 /* glad.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		346903B92CD4135F00CE7DD9 /* khrplatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 34669E4F2CCAD15F00BDDF03 /* khrplatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		346903BF2CD42ED000CE7DD9 /* glad.h in Headers */ = {isa = PBXBuildFile; fileRef = 346903BE2CD42ED000CE7DD9 /* glad.h */; };
+		346903C12CD42EDE00CE7DD9 /* khrplatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 346903C02CD42EDE00CE7DD9 /* khrplatform.h */; };
+		346903C32CD42EE700CE7DD9 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 346903C22CD42EE700CE7DD9 /* glad.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		34669E4D2CCAD15F00BDDF03 /* glad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glad.h; sourceTree = "<group>"; };
-		34669E4F2CCAD15F00BDDF03 /* khrplatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = khrplatform.h; sourceTree = "<group>"; };
-		34669E522CCAD16C00BDDF03 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		346903A52CD4121900CE7DD9 /* libglad.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libglad.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		346903BE2CD42ED000CE7DD9 /* glad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glad.h; sourceTree = "<group>"; };
+		346903C02CD42EDE00CE7DD9 /* khrplatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = khrplatform.h; sourceTree = "<group>"; };
+		346903C22CD42EE700CE7DD9 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 		34669E4E2CCAD15F00BDDF03 /* glad */ = {
 			isa = PBXGroup;
 			children = (
-				34669E4D2CCAD15F00BDDF03 /* glad.h */,
+				346903BE2CD42ED000CE7DD9 /* glad.h */,
 			);
 			path = glad;
 			sourceTree = "<group>";
@@ -58,7 +58,7 @@
 		34669E502CCAD15F00BDDF03 /* KHR */ = {
 			isa = PBXGroup;
 			children = (
-				34669E4F2CCAD15F00BDDF03 /* khrplatform.h */,
+				346903C02CD42EDE00CE7DD9 /* khrplatform.h */,
 			);
 			path = KHR;
 			sourceTree = "<group>";
@@ -75,7 +75,7 @@
 		34669E532CCAD16C00BDDF03 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				34669E522CCAD16C00BDDF03 /* glad.c */,
+				346903C22CD42EE700CE7DD9 /* glad.c */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -87,8 +87,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				346903AA2CD4128000CE7DD9 /* glad.h in Headers */,
-				346903B92CD4135F00CE7DD9 /* khrplatform.h in Headers */,
+				346903BF2CD42ED000CE7DD9 /* glad.h in Headers */,
+				346903C12CD42EDE00CE7DD9 /* khrplatform.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				346903A92CD4127200CE7DD9 /* glad.c in Sources */,
+				346903C32CD42EE700CE7DD9 /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

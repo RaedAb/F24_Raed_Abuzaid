@@ -47,4 +47,9 @@ namespace Tmt {
     {
         return implementation->GetWidth();
     }
+    
+    void Image::Bind()
+    {
+        return implementation->Bind();
+    }
 }

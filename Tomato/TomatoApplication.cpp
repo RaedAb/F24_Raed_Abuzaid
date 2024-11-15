@@ -1,8 +1,12 @@
 #include "pch.h"
+
 #include "TomatoApplication.h"
 #include "TomatoWindow.h"
+#include "Image.h"
+
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
+
 #include "stbi_image.h"
 
 namespace Tmt
@@ -14,67 +18,64 @@ namespace Tmt
         
         // Initialize glad after creating the context
         if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-            std::cerr << "Failed to initialize GLAD" << std::endl;
-            return;
+            TOMATO_ERROR("Failed to initialize GLAD");
         }
         
         Initialize();
         
         /** TESTING AREA **/
-        // Define vertices for a simple triangle
         float vertices[] = {
-            // positions     // texture coordinates
-            -0.5f, -0.5f, 0.0f, 0.0f,  // Bottom-left
-            0.5f, -0.5f, 1.0f, 0.0f,   // Bottom-right
-            0.0f,  0.5f, 0.5f, 1.0f    // Top-center
+            100.0f, 100.0f, 0.0f, 0.0f, // left
+            100.0f, 300.0f, 0.0f, 1.0f, // right
+            300.0f, 300.0f, 1.0f, 1.0f, // top
+            300.0f, 100.0f, 1.0f, 1.0f  // bottom-right
+            
         };
 
-        
         unsigned int indices[] = {
             0, 1, 2,
             0, 2, 3
         };
         
         // Generate and bind Vertex Array Object (VAO)
-        // Generate and bind Vertex Array Object (VAO)
-        unsigned int VAO, VBO, EBO;
+        unsigned int VAO;
         glGenVertexArrays(1, &VAO);
-        
-        
-        glGenBuffers(1, &VBO);
-        glGenBuffers(1, &EBO);
-        
         glBindVertexArray(VAO);
         
-        // Bind and set the vertex buffer data
+        unsigned int VBO;
+        glGenBuffers(1, &VBO);
         glBindBuffer(GL_ARRAY_BUFFER, VBO);
         glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+        glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
+        glEnableVertexAttribArray(0);
         
-        // Bind and set the element buffer data
+        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));
+        glEnableVertexAttribArray(1);
+
+        unsigned int EBO;
+        glGenBuffers(1, &EBO);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
         
-        // Define position attribute (location = 0)
-        glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
-        glEnableVertexAttribArray(0);  // Position attribute
-        
-        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));
-        glEnableVertexAttribArray(1);  // Texture coordinate attribute
-        
-        // Unbind VAO for now to prevent accidental modification
-        glBindVertexArray(0);
-
-        
         // Vertex Shader
-        const char *vertexShaderSource = "#version 330 core\n"
-        "layout (location = 0) in vec2 aPos;\n"
-        "layout(location = 1) in vec2 aTexCoord;\n"
-        "out vec2 TexCoord;\n"
-        "void main()\n"
-        "{\n"
-        "   gl_Position = vec4(aPos.x, aPos.y, 0.0, 1.0);\n"
-        "   TexCoord = aTexCoord;\n"
-        "}\0";
+        const char *vertexShaderSource = R"(
+        #version 330 core
+        
+        layout (location = 0) in vec2 aPos;
+        layout(location = 1) in vec2 aTexCoord;
+        
+        out vec2 TexCoord;
+        
+        uniform ivec2 ScreenDim;
+        
+        void main()
+        {
+            gl_Position = vec4(2*aPos.x/ScreenDim.x - 1, 2*aPos.y/ScreenDim.y - 1, 0.0, 1.0);
+            TexCoord = aTexCoord;
+        }
+        )";
+        
         unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
         glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
         glCompileShader(vertexShader);
@@ -89,17 +90,24 @@ namespace Tmt
         }
         
         // Fragment Shader
-        const char *fragmentShaderSource = "#version 330 core\n"
-        "in vec2 TexCoord;\n"
-        "out vec4 FragColor;\n"
-        "uniform sampler2D ourTexture;\n"
-        "void main()\n"
-        "{\n"
-        "   FragColor = texture(ourTexture, TexCoord);\n"
-        "}\0";
+        const char *fragmentShaderSource = R"(
+        #version 330 core
+        
+        in vec2 TexCoord;
+        uniform sampler2D ourTexture;
+        
+        out vec4 FragColor;
+        
+        void main()
+        {
+            FragColor = texture(ourTexture, TexCoord);
+        }
+        )";
+        
         unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
         glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
         glCompileShader(fragmentShader);
+        
         glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
         if (!success)
         {
@@ -112,14 +120,22 @@ namespace Tmt
         glAttachShader(shaderProgram, vertexShader);
         glAttachShader(shaderProgram, fragmentShader);
         glLinkProgram(shaderProgram);
+        
         glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
         if (!success) {
             glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
             TOMATO_ERROR("ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog);
         }
-        
         glDeleteShader(vertexShader);
         glDeleteShader(fragmentShader);
+        
+        glUseProgram(shaderProgram);
+        int location(glGetUniformLocation(shaderProgram, "ScreenDim"));
+        glUniform2i(location, 800, 600);
+        
+        // Texture section
+        Tmt::Image pic("../Tomato/TomatoAssets/Drawing.png");
+        
         
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -127,39 +143,21 @@ namespace Tmt
         /** END OF TESTING AREA **/
         
         // Main render loop
-        // Main render loop
         while (ShouldContinue)
         {
-            Update(); // Your update function or input handling here
+            Update();
             
-            // Clear the screen
             glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT);
             
-            // Use the shader program
             glUseProgram(shaderProgram);
-            
-            // Bind textures to corresponding texture units
-            glActiveTexture(GL_TEXTURE0);
-            glBindTexture(GL_TEXTURE_2D, texture);
-            
-            // Set the texture uniform locations
-            glUniform1i(glGetUniformLocation(shaderProgram, "texture1"), 0); // Texture unit 0
-            glUniform1i(glGetUniformLocation(shaderProgram, "texture2"), 1); // Texture unit 1
-            
-            // Bind VAO to draw the object
             glBindVertexArray(VAO);
-            glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0); // Draw using indices
-            glBindVertexArray(0); // Optional: Unbind VAO
+            pic.Bind();
+            glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
             
             Tmt::TomatoWindow::GetWindow()->SwapBuffers();
             Tmt::TomatoWindow::GetWindow()->PollEvents();
         }
-        
-        // Clean up resources
-        glDeleteVertexArrays(1, &VAO);
-        glDeleteBuffers(1, &VBO);
-        glDeleteProgram(shaderProgram);
         
         Shutdown();
     }

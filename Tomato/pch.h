@@ -15,5 +15,7 @@
 #include <functional>
 #include <algorithm>
 #include <memory>
+#include <fstream>
+#include <cassert>
 
 #endif /* pch_h */

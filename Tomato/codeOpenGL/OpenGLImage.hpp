@@ -28,6 +28,8 @@ namespace Tmt
         
         virtual void Bind() override;
         
+        ~OpenGLImage();
+        
     private:
         unsigned int mImage{ 0 };
         int mHeight{ 0 };

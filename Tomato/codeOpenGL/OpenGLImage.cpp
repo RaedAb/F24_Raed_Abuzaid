@@ -20,7 +20,6 @@ namespace Tmt
     OpenGLImage::OpenGLImage(const std::string& filePath)
     {
         glGenTextures(1, &mImage);
-        glBindTexture(GL_TEXTURE_2D, mImage);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -48,7 +47,6 @@ namespace Tmt
             glDeleteTextures(1, &mImage);
             
         glGenTextures(1, &mImage);
-        glBindTexture(GL_TEXTURE_2D, mImage);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -88,6 +86,11 @@ namespace Tmt
     void OpenGLImage::Bind()
     {
         glBindTexture(GL_TEXTURE_2D, mImage);
+    }
+    
+    OpenGLImage::~OpenGLImage()
+    {
+        glDeleteTextures(1, &mImage);
     }
 }
 

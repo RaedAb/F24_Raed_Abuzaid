@@ -24,8 +24,9 @@ namespace Tmt
         int GetHeight() const;
         int GetWidth() const;
         
-    private:
         void Bind();
+        
+    private:
         
         std::unique_ptr<ImageImpl> implementation;
         

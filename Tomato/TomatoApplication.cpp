@@ -29,7 +29,6 @@ namespace Tmt
             100.0f, 300.0f, 0.0f, 1.0f, // right
             300.0f, 300.0f, 1.0f, 1.0f, // top
             300.0f, 100.0f, 1.0f, 1.0f  // bottom-right
-            
         };
 
         unsigned int indices[] = {
@@ -134,7 +133,7 @@ namespace Tmt
         glUniform2i(location, 800, 600);
         
         // Texture section
-        Tmt::Image pic("../Tomato/TomatoAssets/Drawing.png");
+        Tmt::Image pic("/Users/game/Desktop/Raed_Abuzaid_Fall_24/Tomato/TomatoAssets/Big_smile.png");
         
         
         glEnable(GL_BLEND);

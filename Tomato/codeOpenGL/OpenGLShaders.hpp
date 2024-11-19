@@ -21,8 +21,14 @@ namespace Tmt
         virtual void LoadShaders(const std::string& vertexSFile, const std::string& fragementSFile) override;
         virtual void Bind() override;
         virtual void SetIntUniform(const std::string& uniformName, const std::vector<int>& values) override;
+        virtual void SetIntUniform(const std::string& uniformName, int value) override;
         
-        ~OpenGLShaders() {};
+        ~OpenGLShaders();
+        
+    private:
+        unsigned int mShaders{ 0 };
+        
+        virtual std::string ReadFile(const std::string& fileName) override;
     };
 }
 

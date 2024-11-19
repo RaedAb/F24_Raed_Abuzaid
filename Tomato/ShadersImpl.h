@@ -17,6 +17,8 @@ namespace Tmt
         virtual void LoadShaders(const std::string& vertexSFile, const std::string& fragementSFile) = 0;
         virtual void Bind() = 0;
         virtual void SetIntUniform(const std::string& uniformName, const std::vector<int>& values) = 0;
+        virtual void SetIntUniform(const std::string& uniformName, int value) = 0;
+        virtual std::string ReadFile(const std::string& fileName) = 0;
         
         virtual ~ShadersImpl() {};
         

@@ -44,25 +44,14 @@ namespace Tmt
         implementation->SetIntUniform(uniformName, values);
     }
     
-    std::string ReadFile(const std::string& fileName)
+    void Shaders::SetIntUniform(const std::string& uniformName, int value)
     {
-        std::ifstream input{ fileName };
-        
-        assert(input);
-        
-        std::string result;
-        std::string line;
-        
-        while(input)
-        {
-            getline(input, line);
-            result += line;
-            result += "/n";
-        }
-        
-        input.close();
-        
-        return result;
+        implementation->SetIntUniform(uniformName, value);
+    }
+    
+    std::string Shaders::ReadFile(const std::string& fileName)
+    {
+        return implementation->ReadFile(fileName);
     }
 }
 

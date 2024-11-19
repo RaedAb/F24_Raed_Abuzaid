@@ -11,5 +11,7 @@
 #include "../EntryPoint.h"
 #include "../TomatoApplication.h"
 #include "../TomatoWindow.h"
+#include "../Image.h"
+#include "../Shaders.h"
 
 #endif /* Tomato_h */

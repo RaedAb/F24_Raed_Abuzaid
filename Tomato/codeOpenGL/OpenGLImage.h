@@ -5,8 +5,8 @@
 //  Created by Game on 11/11/24.
 //
 
-#ifndef OpenGLImage_hpp
-#define OpenGLImage_hpp
+#ifndef OpenGLImage_h
+#define OpenGLImage_h
 
 #include "../ImageImpl.h"
 #include "../pch.h"

@@ -13,5 +13,6 @@
 #include "../TomatoWindow.h"
 #include "../Image.h"
 #include "../Shaders.h"
+#include "../Renderer.h"
 
 #endif /* Tomato_h */

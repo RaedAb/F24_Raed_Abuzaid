@@ -7,7 +7,7 @@
 
 #include "pch.h"
 #include "Shaders.h"
-#include "codeOpenGL/OpenGLShaders.hpp"
+#include "codeOpenGL/OpenGLShaders.h"
 
 namespace Tmt
 {

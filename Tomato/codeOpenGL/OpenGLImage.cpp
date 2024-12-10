@@ -5,7 +5,7 @@
 //  Created by Game on 11/11/24.
 //
 
-#include "OpenGLImage.hpp"
+#include "OpenGLImage.h"
 #include "glad/glad.h"
 #include "stbi_image.h"
 #include "TomatoUtilities.h"
@@ -39,7 +39,8 @@ namespace Tmt
         {
             TOMATO_ERROR("Failed to load texture");
         }
-        stbi_image_free(data);    }
+        stbi_image_free(data);
+    }
     
     void OpenGLImage::LoadImage(const std::string& filePath)
     {

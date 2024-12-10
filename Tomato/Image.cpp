@@ -7,7 +7,7 @@
 
 #include "pch.h"
 #include "Image.h"
-#include "codeOpenGL/OpenGLImage.hpp"
+#include "codeOpenGL/OpenGLImage.h"
 
 namespace Tmt {
     Image::Image()

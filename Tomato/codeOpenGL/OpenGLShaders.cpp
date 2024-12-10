@@ -5,7 +5,7 @@
 //  Created by Game on 11/14/24.
 //
 
-#include "OpenGLShaders.hpp"
+#include "OpenGLShaders.h"
 #include "glad/glad.h"
 #include "../TomatoUtilities.h"
 

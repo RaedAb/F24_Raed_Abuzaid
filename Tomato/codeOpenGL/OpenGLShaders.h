@@ -5,8 +5,8 @@
 //  Created by Game on 11/14/24.
 //
 
-#ifndef OpenGLShaders_hpp
-#define OpenGLShaders_hpp
+#ifndef OpenGLShaders_h
+#define OpenGLShaders_h
 
 #include "../ShadersImpl.h"
 #include "pch.h"

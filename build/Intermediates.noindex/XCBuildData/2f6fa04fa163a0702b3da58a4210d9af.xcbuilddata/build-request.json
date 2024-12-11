@@ -1,0 +1,57 @@
+{
+  "buildCommand" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildAndRun"
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "49d1fdabfee8110765c282720370897fa018e544e9e2345e756f1fa23e5df0ba"
+    }
+  ],
+  "containerPath" : "/Users/game/Desktop/Raed_Abuzaid_Fall_24/Raed_Abuzaid_Fall_24.xcworkspace",
+  "continueBuildingAfterErrors" : false,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "x86_64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx15.1",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "x86_64h",
+        "x86_64"
+      ],
+      "targetArchitecture" : "x86_64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/game/Desktop/Raed_Abuzaid_Fall_24/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/game/Desktop/Raed_Abuzaid_Fall_24/Build/Products",
+      "derivedDataPath" : "/Users/game/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/game/Library/Developer/Xcode/DerivedData/Raed_Abuzaid_Fall_24-frdjcywtwnmbjsaqyalzjeemykrl/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/game/Library/Developer/Xcode/DerivedData/Raed_Abuzaid_Fall_24-frdjcywtwnmbjsaqyalzjeemykrl/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/game/Desktop/Raed_Abuzaid_Fall_24/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "YES",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

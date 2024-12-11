@@ -1,0 +1,175 @@
+{
+  "main_library": {
+    "compatibility_versions": [
+      {
+        "version": "3"
+      }
+    ],
+    "current_versions": [
+      {
+        "version": "3.5"
+      }
+    ],
+    "exported_symbols": [
+      {
+        "text": {
+          "global": [
+            "_glfwWindowHintString",
+            "_glfwGetError",
+            "_glfwGetWindowMonitor",
+            "_glfwRawMouseMotionSupported",
+            "_glfwGetWindowContentScale",
+            "_glfwSetWindowAspectRatio",
+            "_glfwGetOSMesaDepthBuffer",
+            "_glfwGetMonitorName",
+            "_glfwGetInputMode",
+            "_glfwSetCursorEnterCallback",
+            "_glfwGetGamepadState",
+            "_glfwSetKeyCallback",
+            "_glfwGetKey",
+            "_glfwMakeContextCurrent",
+            "_glfwGetGammaRamp",
+            "_glfwSetCursor",
+            "_glfwGetTimerValue",
+            "_glfwGetJoystickName",
+            "_glfwGetJoystickHats",
+            "_glfwSwapBuffers",
+            "_glfwMaximizeWindow",
+            "_glfwInitVulkanLoader",
+            "_glfwGetWindowPos",
+            "_glfwCreateWindow",
+            "_glfwGetPhysicalDevicePresentationSupport",
+            "_glfwPostEmptyEvent",
+            "_glfwSetWindowShouldClose",
+            "_glfwSetWindowTitle",
+            "_glfwSetWindowPos",
+            "_glfwWaitEventsTimeout",
+            "_glfwGetWindowAttrib",
+            "_glfwGetMonitorWorkarea",
+            "_glfwGetWindowOpacity",
+            "_glfwGetProcAddress",
+            "_glfwExtensionSupported",
+            "_glfwGetVersion",
+            "_glfwSwapInterval",
+            "_glfwWaitEvents",
+            "_glfwGetNSGLContext",
+            "_glfwGetCocoaMonitor",
+            "_glfwWindowHint",
+            "_glfwCreateCursor",
+            "_glfwSetErrorCallback",
+            "_glfwWindowShouldClose",
+            "_glfwGetOSMesaColorBuffer",
+            "_glfwJoystickIsGamepad",
+            "_glfwGetCocoaView",
+            "_glfwSetWindowCloseCallback",
+            "_glfwSetCursorPos",
+            "_glfwGetJoystickGUID",
+            "_glfwSetWindowMaximizeCallback",
+            "_glfwDefaultWindowHints",
+            "_glfwSetDropCallback",
+            "_glfwSetJoystickUserPointer",
+            "_glfwGetWindowTitle",
+            "_glfwGetWindowFrameSize",
+            "_glfwGetVersionString",
+            "_glfwGetCocoaWindow",
+            "_glfwGetKeyName",
+            "_glfwGetVideoModes",
+            "_glfwSetClipboardString",
+            "_glfwSetJoystickCallback",
+            "_glfwGetFramebufferSize",
+            "_glfwGetMonitorUserPointer",
+            "_glfwSetCursorPosCallback",
+            "_glfwSetWindowFocusCallback",
+            "_glfwGetKeyScancode",
+            "_glfwRestoreWindow",
+            "_glfwGetMonitorPhysicalSize",
+            "_glfwGetCurrentContext",
+            "_glfwGetJoystickAxes",
+            "_glfwSetWindowRefreshCallback",
+            "_glfwSetWindowSize",
+            "_glfwGetJoystickUserPointer",
+            "_glfwGetWindowUserPointer",
+            "_glfwSetCharModsCallback",
+            "_glfwSetTime",
+            "_glfwGetJoystickButtons",
+            "_glfwSetScrollCallback",
+            "_glfwSetFramebufferSizeCallback",
+            "_glfwCreateStandardCursor",
+            "_glfwSetGammaRamp",
+            "_glfwSetGamma",
+            "_glfwGetEGLSurface",
+            "_glfwGetOSMesaContext",
+            "_glfwInit",
+            "_glfwDestroyWindow",
+            "_glfwGetPlatform",
+            "_glfwSetWindowSizeCallback",
+            "_glfwUpdateGamepadMappings",
+            "_glfwPollEvents",
+            "_glfwGetWindowSize",
+            "_glfwGetCursorPos",
+            "_glfwSetWindowMonitor",
+            "_glfwShowWindow",
+            "_glfwTerminate",
+            "_glfwJoystickPresent",
+            "_glfwSetWindowIcon",
+            "_glfwGetClipboardString",
+            "_glfwGetEGLDisplay",
+            "_glfwGetGamepadName",
+            "_glfwGetInstanceProcAddress",
+            "_glfwSetWindowUserPointer",
+            "_glfwGetTimerFrequency",
+            "_glfwSetWindowSizeLimits",
+            "_glfwGetVideoMode",
+            "_glfwInitHint",
+            "_glfwSetWindowIconifyCallback",
+            "_glfwRequestWindowAttention",
+            "_glfwPlatformSupported",
+            "_glfwSetWindowPosCallback",
+            "_glfwSetCharCallback",
+            "_glfwSetMonitorUserPointer",
+            "_glfwGetMonitorPos",
+            "_glfwSetMonitorCallback",
+            "_glfwGetRequiredInstanceExtensions",
+            "_glfwHideWindow",
+            "_glfwDestroyCursor",
+            "_glfwGetMonitorContentScale",
+            "_glfwInitAllocator",
+            "_glfwSetMouseButtonCallback",
+            "_glfwGetPrimaryMonitor",
+            "_glfwGetEGLContext",
+            "_glfwSetWindowOpacity",
+            "_glfwSetInputMode",
+            "_glfwSetWindowContentScaleCallback",
+            "_glfwGetMouseButton",
+            "_glfwVulkanSupported",
+            "_glfwFocusWindow",
+            "_glfwSetWindowAttrib",
+            "_glfwGetTime",
+            "_glfwIconifyWindow",
+            "_glfwGetMonitors",
+            "_glfwCreateWindowSurface"
+          ]
+        }
+      }
+    ],
+    "flags": [
+      {
+        "attributes": [
+          "not_app_extension_safe"
+        ]
+      }
+    ],
+    "install_names": [
+      {
+        "name": "@rpath/libglfw.3.dylib"
+      }
+    ],
+    "target_info": [
+      {
+        "min_deployment": "14.5",
+        "target": "x86_64-macos"
+      }
+    ]
+  },
+  "tapi_tbd_version": 5
+}

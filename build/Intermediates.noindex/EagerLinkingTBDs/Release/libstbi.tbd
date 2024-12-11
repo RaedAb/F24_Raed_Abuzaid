@@ -1,0 +1,74 @@
+{
+  "main_library": {
+    "exported_symbols": [
+      {
+        "text": {
+          "global": [
+            "_stbi_hdr_to_ldr_scale",
+            "_stbi_hdr_to_ldr_gamma",
+            "_stbi_load_from_memory",
+            "_stbi_load_from_file",
+            "_stbi_load_from_file_16",
+            "_stbi_info_from_file",
+            "_stbi_is_16_bit_from_callbacks",
+            "_stbi_load_from_callbacks",
+            "_stbi_is_hdr",
+            "_stbi_loadf",
+            "_stbi_is_hdr_from_file",
+            "_stbi_zlib_decode_malloc_guesssize",
+            "_stbi_zlib_decode_malloc_guesssize_headerflag",
+            "_stbi_info",
+            "_stbi_ldr_to_hdr_gamma",
+            "_stbi_ldr_to_hdr_scale",
+            "_stbi_image_free",
+            "_stbi_is_hdr_from_memory",
+            "_stbi_load",
+            "_stbi_info_from_callbacks",
+            "_stbi_loadf_from_file",
+            "_stbi_is_16_bit_from_file",
+            "_stbi_failure_reason",
+            "_stbi_load_16_from_callbacks",
+            "_stbi_is_16_bit_from_memory",
+            "_stbi_info_from_memory",
+            "_stbi_set_unpremultiply_on_load_thread",
+            "_stbi_loadf_from_callbacks",
+            "_stbi_set_flip_vertically_on_load_thread",
+            "_stbi_zlib_decode_buffer",
+            "_stbi_zlib_decode_malloc",
+            "_stbi_zlib_decode_noheader_buffer",
+            "_stbi_is_16_bit",
+            "_stbi_load_gif_from_memory",
+            "_stbi_set_flip_vertically_on_load",
+            "_stbi_is_hdr_from_callbacks",
+            "_stbi_convert_iphone_png_to_rgb_thread",
+            "_stbi_set_unpremultiply_on_load",
+            "_stbi_load_16_from_memory",
+            "_stbi_convert_iphone_png_to_rgb",
+            "_stbi_load_16",
+            "_stbi_zlib_decode_noheader_malloc",
+            "_stbi_loadf_from_memory"
+          ]
+        }
+      }
+    ],
+    "flags": [
+      {
+        "attributes": [
+          "not_app_extension_safe"
+        ]
+      }
+    ],
+    "install_names": [
+      {
+        "name": "/usr/local/lib/libstbi.dylib"
+      }
+    ],
+    "target_info": [
+      {
+        "min_deployment": "14.5",
+        "target": "x86_64-macos"
+      }
+    ]
+  },
+  "tapi_tbd_version": 5
+}

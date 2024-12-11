@@ -1,6 +1,5 @@
 Raed_Abuzaid_Fall_24.xcworkspace
-Tomato.xcodeproj
-MyGame.xcodeproj
+*.xcodeproj
 .DS_Store
 .vscode
 glfw_build/

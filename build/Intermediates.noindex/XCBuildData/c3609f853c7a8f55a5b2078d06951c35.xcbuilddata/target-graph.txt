@@ -1,0 +1,8 @@
+Target dependency graph (4 targets)
+Target 'MyGame' in project 'MyGame'
+➜ Implicit dependency on target 'Tomato' in project 'Tomato' via file 'libTomato.dylib' in build phase 'Link Binary'
+Target 'Tomato' in project 'Tomato'
+➜ Implicit dependency on target 'glad' in project 'glad' via file 'libglad.dylib' in build phase 'Link Binary'
+➜ Implicit dependency on target 'stbi' in project 'stbi' via file 'libstbi.dylib' in build phase 'Link Binary'
+Target 'stbi' in project 'stbi' (no dependencies)
+Target 'glad' in project 'glad' (no dependencies)

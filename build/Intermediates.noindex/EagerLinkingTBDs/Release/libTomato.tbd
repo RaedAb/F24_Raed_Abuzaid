@@ -1,0 +1,165 @@
+{
+  "main_library": {
+    "exported_symbols": [
+      {
+        "data": {
+          "global": [
+            "__ZTSN3Tmt11OpenGLImageE",
+            "__ZTIN3Tmt17TomatoApplicationE",
+            "__ZTVN3Tmt10WindowGLFWE",
+            "__ZTVN3Tmt17TomatoApplicationE",
+            "__ZTSN3Tmt14OpenGLRendererE",
+            "__ZTIN3Tmt10WindowGLFWE",
+            "__ZTVN3Tmt14OpenGLRendererE",
+            "__ZTVN3Tmt11OpenGLImageE",
+            "__ZTSN3Tmt17TomatoApplicationE",
+            "__ZTVN3Tmt13OpenGLShadersE",
+            "__ZTSN3Tmt13OpenGLShadersE",
+            "__ZTSN3Tmt10WindowGLFWE",
+            "__ZTIN3Tmt11OpenGLImageE",
+            "__ZTIN3Tmt14OpenGLRendererE",
+            "__ZTIN3Tmt13OpenGLShadersE"
+          ],
+          "weak": [
+            "__ZTINSt3__117bad_function_callE",
+            "__ZTSNSt3__110__function6__baseIFvRKN3Tmt11WindowEventEEEE",
+            "__ZTSN3Tmt9ImageImplE",
+            "__ZTIN3Tmt9ImageImplE",
+            "__ZTIN3Tmt10WindowImplE",
+            "__ZTINSt3__110__function6__baseIFvRKN3Tmt11WindowEventEEEE",
+            "__ZTSNSt3__110__function6__funcIN3Tmt10WindowGLFW9CallBacks15KeyEventHandlerMUlRKNS2_8KeyEventEE_ENS_9allocatorIS8_EEFvS7_EEE",
+            "__ZGVN3Tmt12TomatoWindow8instanceE",
+            "__ZTSN3Tmt11ShadersImplE",
+            "__ZTSN3Tmt10WindowGLFW9CallBacks18WindowEventHandlerMUlRKNS_11WindowEventEE_E",
+            "__ZTSN3Tmt12RendererImplE",
+            "__ZTIN3Tmt12RendererImplE",
+            "__ZTSN3Tmt10WindowImplE",
+            "__ZTIN3Tmt10WindowGLFW9CallBacks15KeyEventHandlerMUlRKNS_8KeyEventEE_E",
+            "__ZTSNSt3__117bad_function_callE",
+            "__ZGVN3Tmt8Renderer9mInstanceE",
+            "__ZTSNSt3__110__function6__funcIN3Tmt10WindowGLFW9CallBacks18WindowEventHandlerMUlRKNS2_11WindowEventEE_ENS_9allocatorIS8_EEFvS7_EEE",
+            "__ZTINSt3__110__function6__funcIN3Tmt10WindowGLFW9CallBacks15KeyEventHandlerMUlRKNS2_8KeyEventEE_ENS_9allocatorIS8_EEFvS7_EEE",
+            "__ZTINSt3__110__function6__funcIN3Tmt10WindowGLFW9CallBacks18WindowEventHandlerMUlRKNS2_11WindowEventEE_ENS_9allocatorIS8_EEFvS7_EEE",
+            "__ZTINSt3__110__function6__baseIFvRKN3Tmt8KeyEventEEEE",
+            "__ZTIN3Tmt11ShadersImplE",
+            "__ZTSN3Tmt10WindowGLFW9CallBacks15KeyEventHandlerMUlRKNS_8KeyEventEE_E",
+            "__ZN3Tmt12TomatoWindow8instanceE",
+            "__ZN3Tmt8Renderer9mInstanceE",
+            "__ZTIN3Tmt10WindowGLFW9CallBacks18WindowEventHandlerMUlRKNS_11WindowEventEE_E",
+            "__ZTSNSt3__110__function6__baseIFvRKN3Tmt8KeyEventEEEE"
+          ]
+        },
+        "text": {
+          "global": [
+            "__ZN3Tmt5ImageC1Ev",
+            "__ZN3Tmt7Shaders13SetIntUniformERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEi",
+            "__ZNK3Tmt11OpenGLImage9GetHeightEv",
+            "__ZN3Tmt7Shaders4BindEv",
+            "__ZNK3Tmt8KeyEvent10GetKeyCodeEv",
+            "__ZNK3Tmt10WindowGLFW8GetWidthEv",
+            "__ZN3Tmt11WindowEventC1ENS0_12WindowActionE",
+            "__ZN3Tmt13OpenGLShadersC2ERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_",
+            "__ZNK3Tmt5Image9GetHeightEv",
+            "__ZN3Tmt7ShadersC1Ev",
+            "__ZN3Tmt13OpenGLShadersC1Ev",
+            "__ZN3Tmt8Renderer11ClearScreenEv",
+            "__ZN3Tmt7Shaders11LoadShadersERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_",
+            "__ZNK3Tmt12TomatoWindow9GetHeightEv",
+            "__ZN3Tmt13OpenGLShadersC2Ev",
+            "__ZN3Tmt8KeyEventC1EiNS0_9KeyActionE",
+            "__ZN3Tmt10WindowGLFW21SetWindowEventHandlerENSt3__18functionIFvRKNS_11WindowEventEEEE",
+            "__ZN3Tmt11OpenGLImage4BindEv",
+            "__ZNK3Tmt11OpenGLImage8HasImageEv",
+            "__ZN3Tmt11OpenGLImage9LoadImageERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE",
+            "__ZNK3Tmt5Image8GetWidthEv",
+            "__ZN3Tmt11OpenGLImageC1ERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE",
+            "__ZN3Tmt17TomatoApplication25DefaultWindowEventHandlerERKNS_11WindowEventE",
+            "__ZN3Tmt8Renderer4InitEv",
+            "__ZN3Tmt13OpenGLShaders4BindEv",
+            "__ZN3Tmt17TomatoApplication21SetWindowEventHandlerENSt3__18functionIFvRKNS_11WindowEventEEEE",
+            "__ZN3Tmt7ShadersC2ERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_",
+            "__ZNK3Tmt12TomatoWindow8GetWidthEv",
+            "__ZN3Tmt13OpenGLShadersD2Ev",
+            "__ZN3Tmt8RendererC1Ev",
+            "__ZN3Tmt10WindowGLFWC2Ev",
+            "__ZN3Tmt13OpenGLShadersC1ERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_",
+            "__ZN3Tmt10WindowGLFW18SetKeyEventHandlerERKNSt3__18functionIFvRKNS_8KeyEventEEEE",
+            "__ZN3Tmt10WindowGLFW10PollEventsEv",
+            "__ZN3Tmt13OpenGLShadersD1Ev",
+            "__ZN3Tmt13OpenGLShaders8ReadFileERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE",
+            "__ZN3Tmt10WindowGLFW6CreateEiiNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE",
+            "__ZN3Tmt17TomatoApplication6UpdateEv",
+            "__ZN3Tmt17TomatoApplication18SetKeyEventHandlerERKNSt3__18functionIFvRKNS_8KeyEventEEEE",
+            "__ZN3Tmt13OpenGLShadersD0Ev",
+            "__ZN3Tmt13OpenGLShaders13SetIntUniformERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERKNS1_6vectorIiNS5_IiEEEE",
+            "__ZNK3Tmt10WindowGLFW9GetHeightEv",
+            "__ZN3Tmt8Renderer4DrawERNS_5ImageEffRNS_7ShadersE",
+            "__ZN3Tmt7ShadersC1ERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_",
+            "__ZN3Tmt7Shaders8ReadFileERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE",
+            "__ZN3Tmt12TomatoWindow18SetKeyEventHandlerERKNSt3__18functionIFvRKNS_8KeyEventEEEE",
+            "__ZN3Tmt14OpenGLRendererC2Ev",
+            "__ZN3Tmt11OpenGLImageC2Ev",
+            "__ZN3Tmt11OpenGLImageD2Ev",
+            "__ZN3Tmt12TomatoWindow4InitEv",
+            "__ZN3Tmt13OpenGLShaders13SetIntUniformERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEi",
+            "__ZN3Tmt7Shaders13SetIntUniformERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERKNS1_6vectorIiNS5_IiEEEE",
+            "__ZN3Tmt7ShadersC2Ev",
+            "__ZNK3Tmt5Image8HasImageEv",
+            "__ZN3Tmt11OpenGLImageD1Ev",
+            "__ZN3Tmt14OpenGLRenderer4DrawERNS_5ImageEffRNS_7ShadersE",
+            "__ZN3Tmt5Image9LoadImageERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE",
+            "__ZN3Tmt17TomatoApplication8ShutdownEv",
+            "__ZN3Tmt10WindowGLFW11SwapBuffersEv",
+            "__ZN3Tmt17TomatoApplication10InitializeEv",
+            "__ZN3Tmt5ImageC1ERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE",
+            "__ZN3Tmt10WindowGLFWC1Ev",
+            "__ZN3Tmt12TomatoWindow21SetWindowEventHandlerENSt3__18functionIFvRKNS_11WindowEventEEEE",
+            "__ZN3Tmt5Image4BindEv",
+            "__ZNK3Tmt11OpenGLImage8GetWidthEv",
+            "__ZN3Tmt14OpenGLRenderer11ClearScreenEv",
+            "__ZNK3Tmt8KeyEvent12GetKeyActionEv",
+            "__ZN3Tmt11OpenGLImageD0Ev",
+            "__ZN3Tmt8RendererC2Ev",
+            "__ZN3Tmt12TomatoWindow11SwapBuffersEv",
+            "__ZN3Tmt12TomatoWindow9GetWindowEv",
+            "__ZNK3Tmt11WindowEvent15GetWindowActionEv",
+            "__ZN3Tmt12TomatoWindowC1Ev",
+            "__ZN3Tmt11OpenGLImageC2ERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE",
+            "__ZN3Tmt8Renderer4DrawERNS_5ImageEff",
+            "__ZN3Tmt11WindowEventC2ENS0_12WindowActionE",
+            "__ZN3Tmt14OpenGLRenderer4DrawERNS_5ImageEff",
+            "__ZN3Tmt5ImageC2Ev",
+            "__ZN3Tmt13OpenGLShaders11LoadShadersERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_",
+            "__ZN3Tmt17TomatoApplication3RunEv",
+            "__ZN3Tmt14OpenGLRendererC1Ev",
+            "__ZN3Tmt12TomatoWindow12CreateWindowEiiNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE",
+            "__ZN3Tmt11OpenGLImageC1Ev",
+            "__ZN3Tmt5ImageC2ERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE",
+            "__ZN3Tmt12TomatoWindow10PollEventsEv",
+            "__ZN3Tmt12TomatoWindowC2Ev",
+            "__ZN3Tmt8KeyEventC2EiNS0_9KeyActionE"
+          ]
+        }
+      }
+    ],
+    "flags": [
+      {
+        "attributes": [
+          "not_app_extension_safe"
+        ]
+      }
+    ],
+    "install_names": [
+      {
+        "name": "/usr/local/lib/libTomato.dylib"
+      }
+    ],
+    "target_info": [
+      {
+        "min_deployment": "14.5",
+        "target": "x86_64-macos"
+      }
+    ]
+  },
+  "tapi_tbd_version": 5
+}

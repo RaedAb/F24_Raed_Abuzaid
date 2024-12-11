@@ -11,6 +11,8 @@
 
 #include "stbi_image.h"
 
+#include "KeyCodes.h"
+
 namespace Tmt
 {
     TomatoApplication::TomatoApplication()
@@ -20,8 +22,8 @@ namespace Tmt
         
         Renderer::Init();
         
-        SetWindowEventHandler(
-            [this](const WindowEvent& event) { DefaultWindowEventHandler(event); });
+        SetWindowEventHandler([this](const WindowEvent& event) { DefaultWindowEventHandler(event);
+        });
     }
     
     void TomatoApplication::Run()
@@ -34,8 +36,29 @@ namespace Tmt
         int x = 100;
         int y = 100;
         
-        mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
+        SetKeyEventHandler([this, &x, &y](const KeyEvent& event) {
+            if (event.GetKeyAction() == KeyEvent::KeyAction::Release)
+                return;
+            
+            switch (event.GetKeyCode())
+            {
+                case TOMATO_KEY_UP:
+                    y += 5;
+                    break;
+                case TOMATO_KEY_DOWN:
+                    y -= 5;
+                    break;
+                case TOMATO_KEY_LEFT:
+                    x -= 5;
+                    break;
+                case TOMATO_KEY_RIGHT:
+                    x += 5;
+                    break;
+            }
+            
+        });
         
+        mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
         
         while (mShouldContinue)
         {
@@ -44,7 +67,6 @@ namespace Tmt
             Renderer::ClearScreen();
             
             Renderer::Draw(pic, x, y);
-            x += 2;
             
             std::this_thread::sleep_until(mNextFrameTime);
             mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
@@ -84,13 +106,9 @@ namespace Tmt
         if (event.GetWindowAction() == WindowEvent::WindowAction::Close)
             mShouldContinue = false;
     }
+    
+    void TomatoApplication::DefaultKeyEventHandler(const KeyEvent& event)
+    {
+        // Not gonna use at the moment
+    }
 }
-
-/*
- 
-Tmt::Image pic{"Assets/image"};
-Tmt::Shader shader{"vert.glsl", "frag.glsl"};
-Tmt::Renderer::Get()->Draw(pic, 100, 200, shader);
- 
- */
-

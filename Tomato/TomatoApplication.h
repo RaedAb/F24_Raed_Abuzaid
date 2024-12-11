@@ -31,6 +31,7 @@ namespace Tmt
         void SetWindowEventHandler(std::function<void(const WindowEvent&)> newHandler);
         
         void DefaultWindowEventHandler(const WindowEvent& event);
+        void DefaultKeyEventHandler(const KeyEvent& event);
         
     private:
         bool mShouldContinue{true};

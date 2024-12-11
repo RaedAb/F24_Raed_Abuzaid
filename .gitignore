@@ -2,6 +2,5 @@ Raed_Abuzaid_Fall_24.xcworkspace
 *.xcodeproj
 .DS_Store
 .vscode
-build/
-glfw_build/
-
+build
+glfw_build

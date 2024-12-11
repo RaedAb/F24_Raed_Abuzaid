@@ -26,11 +26,42 @@ namespace Tmt
     {
         mWindowPtr = glfwCreateWindow(width, height, windowName.c_str(), NULL, NULL);
         
-        if (!mWindowPtr) {
+        if (!mWindowPtr)
             TOMATO_ERROR("GLFW failed to create a window!");
-        }
         
         glfwMakeContextCurrent(mWindowPtr);
+        
+        glfwSetWindowUserPointer(mWindowPtr, &mCallBacks);
+        glfwSetKeyCallback(mWindowPtr, [](GLFWwindow* window, int key, int scancode, int action, int mods)
+        {
+            if (action == GLFW_PRESS)
+            {
+                CallBacks* callbacks{ (CallBacks*) glfwGetWindowUserPointer(window) };
+                
+                KeyEvent event{ key, KeyEvent::KeyAction::Press };
+                callbacks->KeyEventHandler(event);
+            }
+            else if (action == GLFW_RELEASE)
+            {
+                CallBacks* callbacks{ (CallBacks*) glfwGetWindowUserPointer(window) };
+                
+                KeyEvent event{ key, KeyEvent::KeyAction::Release };
+                callbacks->KeyEventHandler(event);
+            }
+            else if (action == GLFW_REPEAT)
+            {
+                CallBacks* callbacks{ (CallBacks*) glfwGetWindowUserPointer(window) };
+                
+                KeyEvent event{ key, KeyEvent::KeyAction::Repeat };
+                callbacks->KeyEventHandler(event);
+            }
+        });
+        
+        glfwSetWindowCloseCallback(mWindowPtr, [](GLFWwindow* window) {
+            CallBacks* callbacks{ (CallBacks*) glfwGetWindowUserPointer(window) };
+            WindowEvent event{WindowEvent::WindowAction::Close};
+            callbacks->WindowEventHandler(event);
+        });
     }
     
     int WindowGLFW::GetWidth() const
@@ -52,6 +83,18 @@ namespace Tmt
         
         return height;
     }
+    
+    
+    void WindowGLFW::SetKeyEventHandler(const std::function<void(const KeyEvent&)>& newHandler)
+    {
+        mCallBacks.KeyEventHandler = newHandler;
+    }
+    
+    void WindowGLFW::SetWindowEventHandler(std::function<void(const WindowEvent&)> newHandler)
+    {
+        mCallBacks.WindowEventHandler = newHandler;
+    }
+    
     
     void WindowGLFW::SwapBuffers()
     {

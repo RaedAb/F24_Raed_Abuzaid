@@ -20,16 +20,11 @@ namespace Tmt
         
         Renderer::Init();
         
+        SetWindowEventHandler(
+            [this](const WindowEvent& event) { DefaultWindowEventHandler(event); });
+        
         Initialize();
-       
-        // Shaders
-        Tmt::Shaders shaders{
-            "/Users/game/Desktop/Raed_Abuzaid_Fall_24/Tomato/TomatoAssets/Shaders/defaultVertexShader.glsl",
-            "/Users/game/Desktop/Raed_Abuzaid_Fall_24/Tomato/TomatoAssets/Shaders/defaultFragmentShader.glsl"};
         
-        shaders.SetIntUniform("ScreenDim", { 800, 600 });
-        
-        // Texture section
         Tmt::Image pic("/Users/game/Desktop/Raed_Abuzaid_Fall_24/Tomato/TomatoAssets/Images/Drawing.png");
         
         // Main render loop
@@ -39,7 +34,7 @@ namespace Tmt
         mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
         
         
-        while (ShouldContinue)
+        while (mShouldContinue)
         {
             Update();
             
@@ -69,6 +64,26 @@ namespace Tmt
     void TomatoApplication::Shutdown()
     {
     }
+    
+    
+    void TomatoApplication::SetKeyEventHandler(const std::function<void(const KeyEvent&)>& newHandler)
+    {
+        Tmt::TomatoWindow::GetWindow()->SetKeyEventHandler(newHandler);
+    }
+    
+    void TomatoApplication::SetWindowEventHandler(std::function<void(const WindowEvent&)> newHandler)
+    {
+        Tmt::TomatoWindow::GetWindow()->SetWindowEventHandler(newHandler);
+    }
+    
+    void TomatoApplication::DefaultWindowEventHandler(const WindowEvent& event)
+    {
+        if (event.GetWindowAction() == WindowEvent::WindowAction::Close)
+            mShouldContinue = false;
+    }
+    
+    
+    
 }
 
 /*

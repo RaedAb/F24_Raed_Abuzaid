@@ -12,6 +12,8 @@
 #include "WindowImpl.h"
 #include "TomatoUtilities.h"
 
+#include "TomatoEvents.h"
+
 namespace Tmt
 {
     class TOMATO_API TomatoWindow
@@ -23,6 +25,9 @@ namespace Tmt
         void CreateWindow(int width, int height, std::string windowName);
         int GetWidth() const;
         int GetHeight() const;
+        
+        void SetKeyEventHandler(const std::function<void(const KeyEvent&)>& newHandler);
+        void SetWindowEventHandler(std::function<void(const WindowEvent&)> newHandler);
         
         void SwapBuffers();
         void PollEvents();

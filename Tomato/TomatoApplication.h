@@ -11,6 +11,8 @@
 #include "TomatoUtilities.h"
 #include "pch.h"
 
+#include "TomatoEvents.h"
+
 constexpr int FPS_RATE{ 60 };
 
 namespace Tmt
@@ -23,8 +25,13 @@ namespace Tmt
         virtual void Update();
         virtual void Shutdown();
         
+        void SetKeyEventHandler(const std::function<void(const KeyEvent&)>& newHandler);
+        void SetWindowEventHandler(std::function<void(const WindowEvent&)> newHandler);
+        
+        void DefaultWindowEventHandler(const WindowEvent& event);
+        
     private:
-        bool ShouldContinue{true};
+        bool mShouldContinue{true};
         
         std::chrono::steady_clock::time_point mNextFrameTime;
         std::chrono::milliseconds mFrameDuration{ std::chrono::milliseconds{ 1000 } / FPS_RATE };

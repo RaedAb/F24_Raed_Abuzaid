@@ -46,6 +46,18 @@ namespace Tmt
         return implementation->GetHeight();
     }
     
+    
+    void TomatoWindow::SetKeyEventHandler(const std::function<void(const KeyEvent&)>& newHandler)
+    {
+        implementation->SetKeyEventHandler(newHandler);
+    }
+    
+    void TomatoWindow::SetWindowEventHandler(std::function<void(const WindowEvent&)> newHandler)
+    {
+        implementation->SetWindowEventHandler(newHandler);
+    }
+    
+    
     void TomatoWindow::SwapBuffers()
     {
         implementation->SwapBuffers();

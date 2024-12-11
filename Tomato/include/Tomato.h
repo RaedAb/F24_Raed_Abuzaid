@@ -14,5 +14,7 @@
 #include "../Image.h"
 #include "../Shaders.h"
 #include "../Renderer.h"
+#include "../TomatoEvents.h"
+#include "../KeyCodes.h"
 
 #endif /* Tomato_h */

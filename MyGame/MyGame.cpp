@@ -14,6 +14,7 @@ class MyGameApplication : public Tmt::TomatoApplication
     virtual void Initialize() override
     {
         TOMATO_LOG("Starting...");
+        TOMATO_ERROR("Error");
     }
     
     virtual void Update() override

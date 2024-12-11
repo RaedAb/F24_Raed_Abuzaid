@@ -17,5 +17,6 @@
 #include <memory>
 #include <fstream>
 #include <cassert>
+#include <thread>
 
 #endif /* pch_h */

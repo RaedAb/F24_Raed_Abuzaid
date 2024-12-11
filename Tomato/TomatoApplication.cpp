@@ -33,13 +33,23 @@ namespace Tmt
         Tmt::Image pic("/Users/game/Desktop/Raed_Abuzaid_Fall_24/Tomato/TomatoAssets/Images/Drawing.png");
         
         // Main render loop
+        int x = 100;
+        int y = 100;
+        
+        mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
+        
+        
         while (ShouldContinue)
         {
             Update();
             
             Renderer::ClearScreen();
             
-            Renderer::Draw(pic, 100, 100);
+            Renderer::Draw(pic, x, y);
+            x += 2;
+            
+            std::this_thread::sleep_until(mNextFrameTime);
+            mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
             
             Tmt::TomatoWindow::GetWindow()->SwapBuffers();
             Tmt::TomatoWindow::GetWindow()->PollEvents();

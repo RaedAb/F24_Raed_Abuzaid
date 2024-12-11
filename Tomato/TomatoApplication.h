@@ -9,6 +9,9 @@
 #define TomatoApplication_h
 
 #include "TomatoUtilities.h"
+#include "pch.h"
+
+constexpr int FPS_RATE{ 60 };
 
 namespace Tmt
 {
@@ -22,6 +25,9 @@ namespace Tmt
         
     private:
         bool ShouldContinue{true};
+        
+        std::chrono::steady_clock::time_point mNextFrameTime;
+        std::chrono::milliseconds mFrameDuration{ std::chrono::milliseconds{ 1000 } / FPS_RATE };
     };
 }
 

@@ -16,5 +16,6 @@
 #include "../Renderer.h"
 #include "../TomatoEvents.h"
 #include "../KeyCodes.h"
+#include "../Unit.h"
 
 #endif /* Tomato_h */

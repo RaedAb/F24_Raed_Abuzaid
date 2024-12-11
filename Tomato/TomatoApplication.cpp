@@ -13,7 +13,7 @@
 
 namespace Tmt
 {
-    void TomatoApplication::Run()
+    TomatoApplication::TomatoApplication()
     {
         Tmt::TomatoWindow::Init();
         Tmt::TomatoWindow::GetWindow()->CreateWindow(800, 600, "test");
@@ -22,7 +22,10 @@ namespace Tmt
         
         SetWindowEventHandler(
             [this](const WindowEvent& event) { DefaultWindowEventHandler(event); });
-        
+    }
+    
+    void TomatoApplication::Run()
+    {
         Initialize();
         
         Tmt::Image pic("/Users/game/Desktop/Raed_Abuzaid_Fall_24/Tomato/TomatoAssets/Images/Drawing.png");
@@ -81,9 +84,6 @@ namespace Tmt
         if (event.GetWindowAction() == WindowEvent::WindowAction::Close)
             mShouldContinue = false;
     }
-    
-    
-    
 }
 
 /*

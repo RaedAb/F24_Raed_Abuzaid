@@ -20,6 +20,8 @@ namespace Tmt
     class TOMATO_API TomatoApplication
     {
     public:
+        TomatoApplication();
+        
         void Run();
         virtual void Initialize();
         virtual void Update();

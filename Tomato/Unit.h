@@ -17,14 +17,31 @@ namespace Tmt
     class TOMATO_API Unit
     {
     public:
-        Unit(const std::string& fileName, float xCoord, float yCoord, bool visible);
+        Unit(const std::string& fileName, float xCoord, float yCoord, bool visible = true);
+        
+        int GetWidth() const;
+        int GetHeight() const;
+        
+        float GetXCoord() const;
+        float GetYCoord() const;
+        void SetCoords(int x, int y);
+        void UpdateXCoord(int amount);
+        void UpdateYCoord(int amount);
+        
+        bool IsVisible() const;
+        void SetVisibility(bool visibility);
         
     private:
         Image mImage;
         float mXCoord{ 0.0 };
         float mYCoord{ 0.0 };
-        bool visible{ true };
+        bool mIsVisible{ true };
+        
+        friend bool TOMATO_API UnitsOverlap(const Unit& a, const Unit& b);
+        friend class Renderer;
     };
+    
+    bool TOMATO_API UnitsOverlap(const Unit& a, const Unit& b);
 }
 
 

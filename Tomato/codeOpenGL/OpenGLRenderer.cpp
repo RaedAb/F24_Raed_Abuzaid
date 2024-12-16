@@ -24,8 +24,8 @@ namespace Tmt
         }
         
         mDefaultShaders.LoadShaders(
-            "/Users/game/Desktop/Raed_Abuzaid_Fall_24/Tomato/TomatoAssets/Shaders/defaultVertexShader.glsl",
-            "/Users/game/Desktop/Raed_Abuzaid_Fall_24/Tomato/TomatoAssets/Shaders/defaultFragmentShader.glsl"
+            "../Tomato/TomatoAssets/Shaders/defaultVertexShader.glsl",
+            "../Tomato/TomatoAssets/Shaders/defaultFragmentShader.glsl"
         );
         
         glGenVertexArrays(1, &mVAO);

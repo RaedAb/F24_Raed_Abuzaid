@@ -22,7 +22,8 @@ namespace Tmt
         
         Renderer::Init();
         
-        SetWindowEventHandler([this](const WindowEvent& event) { DefaultWindowEventHandler(event);
+        SetWindowEventHandler(
+            [this](const WindowEvent& event) { DefaultWindowEventHandler(event);
         });
     }
     
@@ -30,43 +31,13 @@ namespace Tmt
     {
         Initialize();
         
-        Tmt::Image pic("/Users/game/Desktop/Raed_Abuzaid_Fall_24/Tomato/TomatoAssets/Images/Drawing.png");
-        
-        // Main render loop
-        int x = 100;
-        int y = 100;
-        
-        SetKeyEventHandler([this, &x, &y](const KeyEvent& event) {
-            if (event.GetKeyAction() == KeyEvent::KeyAction::Release)
-                return;
-            
-            switch (event.GetKeyCode())
-            {
-                case TOMATO_KEY_UP:
-                    y += 5;
-                    break;
-                case TOMATO_KEY_DOWN:
-                    y -= 5;
-                    break;
-                case TOMATO_KEY_LEFT:
-                    x -= 5;
-                    break;
-                case TOMATO_KEY_RIGHT:
-                    x += 5;
-                    break;
-            }
-            
-        });
-        
         mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
         
         while (mShouldContinue)
         {
-            Update();
-            
             Renderer::ClearScreen();
             
-            Renderer::Draw(pic, x, y);
+            Update();
             
             std::this_thread::sleep_until(mNextFrameTime);
             mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;

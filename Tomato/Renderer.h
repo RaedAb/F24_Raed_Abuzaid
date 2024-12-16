@@ -11,6 +11,7 @@
 #include "pch.h"
 #include "TomatoUtilities.h"
 #include "Image.h"
+#include "Unit.h"
 #include "Shaders.h"
 #include "RendererImpl.h"
 
@@ -23,6 +24,8 @@ namespace Tmt
         
         static void Draw(Image& pic, float xCoord, float yCoord);
         static void Draw(Image& pic, float xCoord, float yCoord, Shaders& shaders);
+        static void Draw(Unit& unit);
+        static void Draw(Unit& unit, Shaders& shaders);
         
         static void ClearScreen();
         

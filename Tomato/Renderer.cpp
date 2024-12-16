@@ -37,6 +37,18 @@ namespace Tmt
         mInstance->mImplementation->Draw(pic, xCoord, yCoord, shaders);
     }
     
+    void Renderer::Draw(Unit& unit)
+    {
+        if (unit.mIsVisible)
+            Draw(unit.mImage, unit.mXCoord, unit.mYCoord);
+    }
+
+    void Renderer::Draw(Unit& unit, Shaders& shaders)
+    {
+        if (unit.mIsVisible)
+            Draw(unit.mImage, unit.mXCoord, unit.mYCoord, shaders);
+    }
+    
     void Renderer::ClearScreen()
     {
         mInstance->mImplementation->ClearScreen();

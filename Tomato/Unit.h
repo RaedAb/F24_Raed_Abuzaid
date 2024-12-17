@@ -14,13 +14,21 @@
 
 namespace Tmt
 {
+    struct CollisionResult {
+        bool isColliding;
+        float overlapX;
+        float overlapY;
+    };
+    
     class TOMATO_API Unit
     {
     public:
-        Unit(const std::string& fileName, float xCoord, float yCoord, bool visible = true);
+        Unit(const std::string& fileName, float xCoord, float yCoord, int width, int height, bool visible = true);
         
         int GetWidth() const;
         int GetHeight() const;
+        void SetWidth(int width);
+        void SetHeight(int height);
         
         float GetXCoord() const;
         float GetYCoord() const;
@@ -35,13 +43,15 @@ namespace Tmt
         Image mImage;
         float mXCoord{ 0.0 };
         float mYCoord{ 0.0 };
+        int mWidth{ 0 };
+        int mHeight{ 0 };
         bool mIsVisible{ true };
         
-        friend bool TOMATO_API UnitsOverlap(const Unit& a, const Unit& b);
+        friend CollisionResult TOMATO_API UnitsOverlap(const Unit& a, const Unit& b);
         friend class Renderer;
     };
     
-    bool TOMATO_API UnitsOverlap(const Unit& a, const Unit& b);
+    CollisionResult TOMATO_API UnitsOverlap(const Unit& a, const Unit& b);
 }
 
 

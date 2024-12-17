@@ -16,8 +16,8 @@ namespace Tmt
     class RendererImpl
     {
     public:
-        virtual void Draw(Image& pic, float xCoord, float yCoord) = 0;
-        virtual void Draw(Image& pic, float xCoord, float yCoord, Shaders &shader) = 0;
+        virtual void Draw(Image& pic, float xCoord, float yCoord, float width, float height) = 0;
+        virtual void Draw(Image& pic, float xCoord, float yCoord, float width, float height, Shaders &shader) = 0;
         
         virtual void ClearScreen() = 0;
         

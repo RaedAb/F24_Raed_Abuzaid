@@ -48,13 +48,13 @@ namespace Tmt
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     }
     
-    void OpenGLRenderer::Draw(Image& pic, float xCoord, float yCoord)
+    void OpenGLRenderer::Draw(Image& pic, float xCoord, float yCoord, float width, float height)
     {
         float vertices[] = {
             xCoord,                  yCoord,                   0.0f, 0.0f,
-            xCoord,                  yCoord + pic.GetHeight(), 0.0f, 1.0f,
-            xCoord + pic.GetWidth(), yCoord + pic.GetHeight(), 1.0f, 1.0f,
-            xCoord + pic.GetWidth(), yCoord,                   1.0f, 0.0f
+            xCoord,                  yCoord + height,          0.0f, 1.0f,
+            xCoord + width,          yCoord + height,          1.0f, 1.0f,
+            xCoord + width,          yCoord,                   1.0f, 0.0f
         };
         
         unsigned int indices[] = {
@@ -70,19 +70,21 @@ namespace Tmt
         
         mDefaultShaders.Bind();
         mDefaultShaders.SetIntUniform("ScreenDim",
-            { TomatoWindow::GetWindow()->GetWidth(), TomatoWindow::GetWindow()->GetWidth() });
+                                      { TomatoWindow::GetWindow()->GetWidth(), TomatoWindow::GetWindow()->GetHeight() });
+        
         glBindVertexArray(mVAO);
         pic.Bind();
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     }
+
     
-    void OpenGLRenderer::Draw(Image& pic, float xCoord, float yCoord, Shaders &shader)
+    void OpenGLRenderer::Draw(Image& pic, float xCoord, float yCoord, float width, float height, Shaders &shader)
     {
         float vertices[] = {
             xCoord,                  yCoord,                   0.0f, 0.0f,
-            xCoord,                  yCoord + pic.GetHeight(), 0.0f, 1.0f,
-            xCoord + pic.GetWidth(), yCoord + pic.GetHeight(), 1.0f, 1.0f,
-            xCoord + pic.GetWidth(), yCoord,                   1.0f, 0.0f
+            xCoord,                  yCoord + height,          0.0f, 1.0f,
+            xCoord + width,          yCoord + height,          1.0f, 1.0f,
+            xCoord + width,          yCoord,                   1.0f, 0.0f
         };
         
         unsigned int indices[] = {
@@ -104,7 +106,7 @@ namespace Tmt
     
     void OpenGLRenderer::ClearScreen()
     {
-        glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
+        glClearColor(0.5f, 0.6f, 0.5f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
     }
 }

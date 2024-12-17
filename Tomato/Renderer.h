@@ -22,8 +22,8 @@ namespace Tmt
     public:
         static void Init();
         
-        static void Draw(Image& pic, float xCoord, float yCoord);
-        static void Draw(Image& pic, float xCoord, float yCoord, Shaders& shaders);
+        static void Draw(Image& pic, float xCoord, float yCoord, float width, float height);
+        static void Draw(Image& pic, float xCoord, float yCoord, float width, float height, Shaders& shaders);
         static void Draw(Unit& unit);
         static void Draw(Unit& unit, Shaders& shaders);
         

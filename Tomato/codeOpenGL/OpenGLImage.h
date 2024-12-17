@@ -28,6 +28,10 @@ namespace Tmt
         
         virtual void Bind() override;
         
+        std::unique_ptr<ImageImpl> Clone() const override {
+            return std::make_unique<OpenGLImage>(*this);
+        }
+        
         ~OpenGLImage();
         
     private:

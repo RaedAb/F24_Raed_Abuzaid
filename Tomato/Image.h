@@ -18,21 +18,22 @@ namespace Tmt
     public:
         Image();
         Image(const std::string& filePath);
-        void LoadImage(const std::string& filePath);
         
+        Image(const Image& other);
+        Image(Image&& other) noexcept = default;
+        Image& operator=(const Image& other);
+        Image& operator=(Image&& other) noexcept = default;
+        
+        void LoadImage(const std::string& filePath);
         bool HasImage() const;
         int GetHeight() const;
         int GetWidth() const;
-        
         void Bind();
         
     private:
-        
         std::unique_ptr<ImageImpl> implementation;
         
         friend class Renderer;
-        
-        
     };
 }
 

@@ -22,6 +22,8 @@ namespace Tmt
         
         virtual void Bind() = 0;
         
+        virtual std::unique_ptr<ImageImpl> Clone() const = 0;
+        
         virtual ~ImageImpl() {};
     };
 }

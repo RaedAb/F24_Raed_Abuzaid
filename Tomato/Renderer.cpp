@@ -27,26 +27,26 @@ namespace Tmt
             mInstance = std::unique_ptr<Renderer>(new Renderer);
     }
     
-    void Renderer::Draw(Image& pic, float xCoord, float yCoord)
+    void Renderer::Draw(Image& pic, float xCoord, float yCoord, float width, float height)
     {
-        mInstance->mImplementation->Draw(pic, xCoord, yCoord);
+        mInstance->mImplementation->Draw(pic, xCoord, yCoord, width, height);
     }
     
-    void Renderer::Draw(Image& pic, float xCoord, float yCoord, Shaders& shaders)
+    void Renderer::Draw(Image& pic, float xCoord, float yCoord, float width, float height, Shaders& shaders)
     {
-        mInstance->mImplementation->Draw(pic, xCoord, yCoord, shaders);
+        mInstance->mImplementation->Draw(pic, xCoord, yCoord, width, height, shaders);
     }
     
     void Renderer::Draw(Unit& unit)
     {
         if (unit.mIsVisible)
-            Draw(unit.mImage, unit.mXCoord, unit.mYCoord);
+            Draw(unit.mImage, unit.mXCoord, unit.mYCoord, unit.GetWidth(), unit.GetHeight());
     }
 
     void Renderer::Draw(Unit& unit, Shaders& shaders)
     {
         if (unit.mIsVisible)
-            Draw(unit.mImage, unit.mXCoord, unit.mYCoord, shaders);
+            Draw(unit.mImage, unit.mXCoord, unit.mYCoord, unit.GetWidth(), unit.GetHeight(), shaders);
     }
     
     void Renderer::ClearScreen()

@@ -28,6 +28,23 @@ namespace Tmt {
 #endif
     }
     
+    Image::Image(const Image& other)
+    {
+        if (other.implementation) {
+            implementation = other.implementation->Clone();
+        }
+    }
+    
+    Image& Image::operator=(const Image& other)
+    {
+        if (this != &other) {
+            if (other.implementation) {
+                implementation = other.implementation->Clone();
+            }
+        }
+        return *this;
+    }
+    
     void Image::LoadImage(const std::string& filePath)
     {
         return implementation->LoadImage(filePath);

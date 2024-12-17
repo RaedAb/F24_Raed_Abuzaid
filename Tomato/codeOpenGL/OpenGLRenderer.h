@@ -16,8 +16,8 @@ namespace Tmt
     {
     public:
         OpenGLRenderer();
-        virtual void Draw(Image& pic, float xCoord, float yCoord) override;
-        virtual void Draw(Image& pic, float xCoord, float yCoord, Shaders &shader) override;
+        virtual void Draw(Image& pic, float xCoord, float yCoord, float width, float height) override;
+        virtual void Draw(Image& pic, float xCoord, float yCoord, float width, float height, Shaders &shader) override;
         
         void ClearScreen() override;
         

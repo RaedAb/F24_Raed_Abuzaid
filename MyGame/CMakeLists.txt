@@ -1,4 +1,4 @@
-add_executable(MyGame MyGame.cpp MovementHandler.cpp)
+add_executable(MyGame MyGame.cpp)
 
 target_include_directories(MyGame PRIVATE ../Tomato/include)
 

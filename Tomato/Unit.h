@@ -14,8 +14,10 @@
 
 namespace Tmt
 {
+    enum class CollisionType { SOFT, HARD, NONE };
+    
     struct CollisionResult {
-        bool isColliding;
+        CollisionType type;
         float overlapX;
         float overlapY;
     };
@@ -25,16 +27,16 @@ namespace Tmt
     public:
         Unit(const std::string& fileName, float xCoord, float yCoord, int width, int height, bool visible = true);
         
-        int GetWidth() const;
-        int GetHeight() const;
-        void SetWidth(int width);
-        void SetHeight(int height);
+        float GetWidth() const;
+        float GetHeight() const;
+        void SetWidth(float width);
+        void SetHeight(float height);
         
         float GetXCoord() const;
         float GetYCoord() const;
-        void SetCoords(int x, int y);
-        void UpdateXCoord(int amount);
-        void UpdateYCoord(int amount);
+        void SetCoords(float x, float y);
+        void UpdateXCoord(float amount);
+        void UpdateYCoord(float amount);
         
         bool IsVisible() const;
         void SetVisibility(bool visibility);
@@ -43,15 +45,15 @@ namespace Tmt
         Image mImage;
         float mXCoord{ 0.0 };
         float mYCoord{ 0.0 };
-        int mWidth{ 0 };
-        int mHeight{ 0 };
+        float mWidth{ 0 };
+        float mHeight{ 0 };
         bool mIsVisible{ true };
         
-        friend CollisionResult TOMATO_API UnitsOverlap(const Unit& a, const Unit& b);
+        friend CollisionResult TOMATO_API UnitsOverlap(Unit& a, Unit& b);
         friend class Renderer;
     };
     
-    CollisionResult TOMATO_API UnitsOverlap(const Unit& a, const Unit& b);
+    CollisionResult TOMATO_API UnitsOverlap(Unit& a, Unit& b);
 }
 
 

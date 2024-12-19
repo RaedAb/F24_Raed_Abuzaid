@@ -15,22 +15,22 @@ namespace Tmt
     {
     }
     
-    int Unit::GetWidth() const
+    float Unit::GetWidth() const
     {
         return mWidth;
     }
     
-    int Unit::GetHeight() const
+    float Unit::GetHeight() const
     {
         return mHeight;
     }
     
-    void Unit::SetWidth(int width)
+    void Unit::SetWidth(float width)
     {
         mWidth = width;
     }
     
-    void Unit::SetHeight(int height)
+    void Unit::SetHeight(float height)
     {
         mHeight = height;
     }
@@ -45,18 +45,18 @@ namespace Tmt
         return mYCoord;
     }
     
-    void Unit::SetCoords(int x, int y)
+    void Unit::SetCoords(float x, float y)
     {
         mXCoord = x;
         mYCoord = y;
     }
     
-    void Unit::UpdateXCoord(int amount)
+    void Unit::UpdateXCoord(float amount)
     {
         mXCoord += amount;
     }
     
-    void Unit::UpdateYCoord(int amount)
+    void Unit::UpdateYCoord(float amount)
     {
         mYCoord += amount;
     }
@@ -71,30 +71,42 @@ namespace Tmt
         return mIsVisible;
     }
     
-    CollisionResult UnitsOverlap(const Unit& a, const Unit& b)
+    
+    CollisionResult UnitsOverlap(Unit& a, Unit& b)
     {
-        float left_a{ a.mXCoord };
-        float right_a{ a.mXCoord + a.mWidth };
-        float bot_a{ a.mYCoord };
-        float top_a{ a.mYCoord + a.mHeight };
+        float bufferMargin = 1.0f;
+        float left_a{ a.mXCoord - bufferMargin };
+        float right_a{ a.mXCoord + a.mWidth + bufferMargin };
+        float bot_a{ a.mYCoord - bufferMargin };
+        float top_a{ a.mYCoord + a.mHeight + bufferMargin };
         
-        float left_b{ b.mXCoord };
-        float right_b{ b.mXCoord + b.mWidth };
-        float bot_b{ b.mYCoord };
-        float top_b{ b.mYCoord + b.mHeight };
+        float left_b{ b.mXCoord - bufferMargin };
+        float right_b{ b.mXCoord + b.mWidth + bufferMargin };
+        float bot_b{ b.mYCoord - bufferMargin };
+        float top_b{ b.mYCoord + b.mHeight + bufferMargin };
         
         bool x_intersection = (left_a < right_b && right_a > left_b);
-        
         bool y_intersection = (bot_a < top_b && top_a > bot_b);
         
-        if (!x_intersection || !y_intersection) {
-            return { false, 0.0f, 0.0f };
+        if (!x_intersection || !y_intersection)
+        {
+            return { CollisionType::NONE, 0.0f, 0.0f };
         }
         
         float overlapX = std::min(right_a, right_b) - std::max(left_a, left_b);
         float overlapY = std::min(top_a, top_b) - std::max(bot_a, bot_b);
         
-        return { true, overlapX, overlapY };
+        if (overlapX > 0.0f && overlapY > 0.0f) {
+            if (overlapX > bufferMargin && overlapY > bufferMargin) {
+                return { CollisionType::HARD, overlapX, overlapY };
+            }
+            else
+            {
+                return { CollisionType::SOFT, overlapX, overlapY };
+            }
+        }
+        
+        return { CollisionType::NONE, 0.0f, 0.0f };
     }
 
 }

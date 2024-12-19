@@ -11,7 +11,7 @@
 class MovementHandler
 {
 public:
-    MovementHandler() : mVelocityY(-15), mSpeed(5), mGravity(-1) {}
+    MovementHandler() : mVelocityY(-10), mSpeed(5), mGravity(-1) {}
     
     void UpdatePosition(Tmt::Unit& object, const std::set<InputHandler::Direction>& directions)
     {
@@ -32,7 +32,7 @@ public:
                     {
                         mIsJumping = true;
                         mIsGrounded = false;
-                        mVelocityY = 15;
+                        mVelocityY = 10;
                     }
                     break;
                     
@@ -43,7 +43,7 @@ public:
         
         if (mIsJumping || !mIsGrounded)
         {
-            if (mVelocityY > -15) mVelocityY += mGravity;
+            if (mVelocityY > -10) mVelocityY += mGravity;
         }
         
         if (mIsGrounded)
